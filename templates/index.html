@@ -72,7 +72,10 @@
 				<div class="col-md-12">
 					<div class="section-title text-center">
 						<h3> Home </h3>
-                        <p>Welcome to the Brain Research Tagging Project, a collaboration between NAMI Montana and researchers from Montana State University. We’re excited to offer you a great way to learn about cutting edge brain science while helping to build a comprehensive brain research database that will help illuminate the current status of brain research and potential future research areas. The Brain Research Tagging Project involves tagging current brain research articles based upon the National Institute of Mental Health’s Research Domain Criteria. Please <a href="{% url 'users:signup' %}"> sign-up </a> or <a href="{% url 'users:login' %}">log-in </a> to get started.</p>
+                        <p>Welcome to the Brain Research Tagging Project, a collaboration between NAMI Montana and researchers from Montana State University. We’re excited to offer you a great way to learn about cutting edge brain science while helping to build a comprehensive brain research database that will help illuminate the current status of brain research and potential future research areas. The Brain Research Tagging Project involves tagging current brain research articles based upon the National Institute of Mental Health’s Research Domain Criteria.
+                            {% if not user.is_authenticated %}
+                            Please <a href="{% url 'users:signup' %}"> sign-up </a> or <a href="{% url 'users:login' %}">log-in </a> to get started.</p>
+                            {% endif %}
 					</div>
 				</div>
 			</div>

@@ -85,23 +85,23 @@ WSGI_APPLICATION = 'brain.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'brainResearchnami',
-        'USER': 'postgres',
-        'PASSWORD': '9Io0cG2kgEMd8mIr',
-        'HOST': '35.192.135.13',
-        'PORT': '5432',
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'brainResearchnami',
+#         'USER': 'postgres',
+#         'PASSWORD': '9Io0cG2kgEMd8mIr',
+#         'HOST': '35.192.135.13',
+#         'PORT': '5432',
+#         }
+# }
 
 
 #Static Storage
