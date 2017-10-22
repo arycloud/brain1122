@@ -8,11 +8,12 @@ admin.site.unregister(User)
 
 
 class InlineTaggedArticle(admin.TabularInline):
-    model = TaggedArticle
+    fields = ['category_fit', 'article', 'link', 'relevant_feedback', 'category', 'user', 'email']
+    model = Tagged
 
 
 class CustomAdmin(UserAdmin):
-    date_hierarchy = 'date_joined'
+    # date_hierarchy = 'date_joined'
     inlines = [InlineTaggedArticle, ]
     list_display = list(UserAdmin.list_display) + ['totol_tagged_article']
 
@@ -24,10 +25,10 @@ admin.site.register(User, CustomAdmin)
 
 class TaggedArticleAdmin(admin.ModelAdmin):
     date_hierarchy = 'created_at'
-    # fields = ['category_fit', 'article', 'link', 'relevant_feedback', 'category', 'user', 'email']
+    fields = ['category_fit', 'article', 'link', 'relevant_feedback', 'category', 'user', 'email']
     list_display = ['article', 'link', 'user', 'email', 'relevant_feedback']
     list_filter = ['user', 'email']
-    model = Tagged
+    model = TaggedArticle
 
 
 admin.site.register(Tagged, TaggedArticleAdmin)

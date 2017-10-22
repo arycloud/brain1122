@@ -11,7 +11,7 @@ from users.models import TaggedArticle
 class ArticleResource(resources.ModelResource):
     class Meta:
         model = Article
-        import_id_fields = ('id',)
+        # import_id_fields = ('id',)
 
 
 class ArticleDetail(LoginRequiredMixin, generic.DetailView):
